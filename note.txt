@@ -34,7 +34,7 @@
 
 - git checkout <branch_name>   // ย้าย branch
 
-- git checkout -- <file_name>   // ยกเลิกการเปลี่ยนแปลงของไฟล์นั้น ใน branch เรา
+- git checkout -- .   // ยกเลิกการเปลี่ยนแปลงทั้งหมด ใน branch เรา
 
 - git branch    // ตรวจสอบ branch ปัจจุบัน
 
