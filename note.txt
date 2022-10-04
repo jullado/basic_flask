@@ -1,0 +1,63 @@
+// สร้าง venv
+- python -m venv <foldername>
+
+// เข้าใช้งาน venv
+- venv\Scripts\activate
+
+// install flask
+- pip install flask
+
+// สร้างตัวเก็บชื่อ library (ถ้าไม่ใส่ > <filename> จะ print ดู lib ที่มีอย่างเดียว) (ไม่ทำก็ได้)
+- pip freeze > <filename>.txt
+
+// install ตามไฟล์ .txt (uninstall ก็ได้)
+- pip install -r <filename>.txt
+
+
+
+// เอาโค้ดขึ้น git
+
+- git init  // สร้างไฟล์ git
+
+- git remote add origin <repo https>    // เลือก repo ที่จะจัดเก็บ
+
+- git add . // เลือกไฟล์ทั้งหมด (stage all)
+
+- git commit -m "<message_commit>"  // commit file ที่ add (ยังอยู่ใน local)
+
+- git push -u origin <branch_name>   // push file ไปยัง git branch เรา (ออกนอก local)
+
+
+// คำสั่งอื่นๆ ของ git
+
+- git fetch   // refresh ข้อมูล git
+
+- git checkout <branch_name>   // ย้าย branch
+
+- git checkout -- <path_file>   // ยกเลิกการเปลี่ยนแปลงของไฟล์นั้น ใน branch เรา
+
+- git checkout -- .   // ยกเลิกการเปลี่ยนแปลงทั้งหมด ใน branch เรา
+
+- git branch    // ตรวจสอบ branch ปัจจุบัน
+
+- git branch --all // ตรวจสอบ branch ทั้งหมด
+
+- git branch <new_branch_name> // สร้าง branch ใหม่ จาก branch ปัจจุบัน
+
+- git branch --delete <branch_name> // ลบ branch
+
+- git pull    // ดึงข้อมูลที่ถูกอัพเดทใน branch มายัง local
+
+- git merge A   // merge ไฟล์ branch A เข้า branch เรา
+
+- git config user.name "<username>" // ตั้งค่า username ที่แสดง สำหรับ repo นั้น
+
+- git config user.email "<email>"   // ตั้งค่า email สำหรับ access สำหรับ repo นั้น
+
+- git config user.password "<password>" // ตั้งค่า password สำหรับ access สำหรับ repo นั้น
+
+- git config --global user.name "<username>" // ตั้งค่า username ที่แสดง สำหรับทุก repo
+
+- git config --global user.email "<email>"   // ตั้งค่า email สำหรับ access สำหรับทุก repo
+
+- git config --global user.password "<password>" // ตั้งค่า password สำหรับ access สำหรับทุก repo
