@@ -49,3 +49,15 @@
 - git pull    // ดึงข้อมูลที่ถูกอัพเดทใน branch มายัง local
 
 - git merge A   // merge ไฟล์ branch A เข้า branch เรา
+
+- git config user.name "<username>" // ตั้งค่า username ที่แสดง สำหรับ repo นั้น
+
+- git config user.email "<email>"   // ตั้งค่า email สำหรับ access สำหรับ repo นั้น
+
+- git config user.password "<password>" // ตั้งค่า password สำหรับ access สำหรับ repo นั้น
+
+- git config --global user.name "<username>" // ตั้งค่า username ที่แสดง สำหรับทุก repo
+
+- git config --global user.email "<email>"   // ตั้งค่า email สำหรับ access สำหรับทุก repo
+
+- git config --global user.password "<password>" // ตั้งค่า password สำหรับ access สำหรับทุก repo
