@@ -1,6 +1,7 @@
 from flask import Flask , request, Blueprint, jsonify
 import os
 from dotenv import load_dotenv
+import requests, json
 
 load_dotenv()   # ทำให้ใช้ค่า env จากไฟล์ .env ได้ด้วย os.getenv
 
@@ -42,17 +43,30 @@ def test_path2():
     body = request.json # รับค่า body ทั้งหมด
     return jsonify({"status":"success","message": "Test Path 2", "data" : body})
 
+def test_request():
+    payload = { "username" : "julladith"}
+
+    url = "http://127.0.0.1:8080/request/get"
+    headers = {
+        'Content-Type': 'application/json'
+    }
+    res = requests.request("GET", url, headers=headers, data=json.dumps(payload))   # แปลงจาก dict เป็น json เพื่อส่ง
+    print(res.text)
+
+    return jsonify({"status":"success","message": "Test send request"})
+
 routes = Blueprint('test',__name__) # สร้าง blueprint สำหรับเพิ่ม path ลูก
 
 routes.add_url_rule('/test1','test1', test_path1, methods = ['GET']) # เพิ่ม path ลูก ให้ blueprint
 routes.add_url_rule('/test2','test2', test_path2, methods = ['POST']) # เพิ่ม path ลูก ให้ blueprint
+routes.add_url_rule('/test_request','test_request', test_request, methods = ['POST'])
             
 app.register_blueprint(routes, url_prefix="/api/v1") # group path
 
 
 # ถ้าไฟล์นี้ถูกสั่งรัน __name__ จะเท่ากับ __main__ **************************************************
 if __name__ == '__main__':
-    app.run(host='localhost',port=PORT,debug=False) # สร้าง flask connection
+    app.run(host="0.0.0.0",port=PORT,debug=True) # สร้าง flask connection
     
     # default => host=ipv4, port=5000, debug=false
     # ถ้า debug=True จะสามารถทำ hot reload ได้
