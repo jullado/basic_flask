@@ -9,3 +9,7 @@
 
 ## สร้างตัวเก็บชื่อ library (ถ้าไม่ใส่ > <filename> จะ print ดู lib ที่มีอย่างเดียว) (ไม่ทำก็ได้)
 - pip freeze > requirements.txt
+
+
+## run app
+- python app.py
